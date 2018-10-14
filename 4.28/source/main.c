@@ -6,6 +6,7 @@ int main(void)
 	int item,hour,paycode,overtime;
 	double wage;
 	double sales;
+	double salary;
 	for (int i = 1; i <= 20; i++)
 	{
 		printf("Enter your paycode:");
@@ -17,21 +18,26 @@ int main(void)
 		
 		if (paycode == 1)
 		{
-			printf("Fixed weekly salary,bro\n");
+			printf("Enter weekly salary");
+			scanf_s("%lf", &salary);
+			printf("Fixed weekly salary = %2.2f\n" , salary );
 		}
 		
 		if (paycode == 2)
 		{
 			printf("work hour :");
 			scanf_s("%d", &hour);
+			printf("Enter hourky wage:");
+			scanf_s("%lf", &salary);
 			if (hour > 40)
 			{
-				overtime = (hour - 40);
-				printf("%d * 1.5 * (Fix hourly wage) + 40 * (Fix hourly wage)\n", overtime);
+				wage = salary * 40 + 1.5 * (hour - 40) * salary;
+				printf("Overtime wage = %2.2f \n", wage);
 			}
 			else
 			{
-				printf("%d * (Fix hourly wage)\n", hour);
+				wage = hour * salary;
+				printf("wage = %2.2f\n", wage);
 			}
 		}
 		if (paycode == 3)
@@ -45,8 +51,10 @@ int main(void)
 		{
 			printf("amount of item :");
 			scanf_s("%d", &item);
-			
-			printf("%d * (Fixed money)\n", item);
+			printf("Enter item worth:");
+			scanf_s("%lf", &salary);
+			wage = salary * item;
+			printf("wage = %2.2f \n", wage);
 		}
 	}
 
